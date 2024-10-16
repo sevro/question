@@ -7,9 +7,7 @@ Windows: [![Build status](https://ci.appveyor.com/api/projects/status/k7ccce7908
 
 A Command Line Question Asker for Rust.
 
-> Ask a question, what more could you want?
-
-Easy to use library for asking users questions when writing console/terminal applications.
+> Easy to use library for asking users questions when writing console/terminal applications.
 
 **This package is passively maintained.** Don't let the inactivity fool you issues and feature requests will be addressed. It is due to being a small focused library that just works so well nothing has had to be done.
 
