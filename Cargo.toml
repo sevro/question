@@ -1,20 +1,20 @@
 [package]
 name = "question"
 version = "0.2.2"
-authors = ["Derek Goddeau <datenstrom@protonmail.com>"]
-description = "Ask a question, what more could you want?"
-documentation = "https://docs.rs/question/0.1.0/question/"
-homepage = "https://gitlab.com/starshell/question"
-repository = "https://gitlab.com/starshell/question"
+authors = ["Derek Goddeau <d.j.goddeau@gmail.com>"]
+description = "Library that provides a type for questions and answers."
+documentation = "https://docs.rs/question/"
+homepage = "https://github.com/sevro/question"
+repository = "https://github.com/sevro/question"
 license = "MIT"
 readme = "README.md"
 keywords = ["question", "ask", "answer", "cli", "prompt"]
 categories = ["command-line-utilities", "command-line-interface"]
 
 [badges]
-gitlab = { repository = "starshell/question", branch = "master" }
-appveyor = { repository = "starshell/question", branch = "master", service = "gitlab" }
-codecov = { repository = "starshell/question", branch = "master", service = "gitlab" }
+github = { repository = "sevro/question", branch = "master" }
+appveyor = { repository = "sevro/question", branch = "master", service = "github" }
+codecov = { repository = "sevro/question", branch = "master", service = "github" }
 maintenance = { status = "passively-maintained" }
 
 [dependencies]
