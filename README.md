@@ -63,6 +63,6 @@ To contribute to Question, please see [CONTRIBUTING](CONTRIBUTING.md).
 
 ## License
 
-Question is distributed under the terms of the MIT license. If this does not suit your needs for some reason please feel free to contact me, or open an issue.
+Question is distributed under the terms of the MIT license. If this does not suit your needs for some reason please feel free to contact me, or open a [discussion](https://github.com/sevro/question/discussions/categories/general).
 
 See [LICENSE](LICENSE).
