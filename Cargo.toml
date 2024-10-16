@@ -18,7 +18,7 @@ codecov = { repository = "sevro/question", branch = "master", service = "github"
 maintenance = { status = "passively-maintained" }
 
 [dependencies]
-clippy = {version = "0.0.169", optional = true}
+clippy = {version = "0.0.302", optional = true}
 
 [features]
 default = []
