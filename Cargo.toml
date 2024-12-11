@@ -17,10 +17,3 @@ github = { repository = "sevro/question", branch = "master" }
 appveyor = { repository = "sevro/question", branch = "master", service = "github" }
 codecov = { repository = "sevro/question", branch = "master", service = "github" }
 maintenance = { status = "passively-maintained" }
-
-[dependencies]
-clippy = {version = "0.0.302", optional = true}
-
-[features]
-default = []
-strict = ["clippy"]

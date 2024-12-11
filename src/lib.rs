@@ -11,9 +11,6 @@
 //! # use question::Question;
 //! Question::new("Do you want to continue?").confirm();
 //! ```
-#![cfg_attr(feature = "strict", feature(plugin))]
-#![cfg_attr(feature = "strict", plugin(clippy))]
-#![cfg_attr(feature = "strict", deny(warnings))]
 
 use std::collections::HashMap;
 use std::io::{BufRead, BufReader, Read, Write};
