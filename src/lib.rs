@@ -133,8 +133,7 @@ where
         match self.acceptable {
             Some(ref mut vec) => vec.push(accepted),
             None => {
-                let mut vec = Vec::new();
-                vec.push(accepted);
+                let vec = vec![accepted];
                 self.acceptable = Some(vec);
             }
         }
@@ -189,15 +188,15 @@ where
         ];
 
         let response_values = vec![Answer::YES, Answer::YES, Answer::NO, Answer::NO];
-        let mut valid_responses: HashMap<String, Answer> = response_keys
-            .into_iter()
-            .zip(response_values.into_iter())
-            .collect();
+        let mut valid_responses: HashMap<String, Answer> =
+            response_keys.into_iter().zip(response_values).collect();
 
         match self.valid_responses {
-            Some(ref mut hashmap) => for (k, v) in valid_responses.drain() {
-                hashmap.insert(k, v);
-            },
+            Some(ref mut hashmap) => {
+                for (k, v) in valid_responses.drain() {
+                    hashmap.insert(k, v);
+                }
+            }
             None => self.valid_responses = Some(valid_responses),
         }
         self
@@ -376,7 +375,7 @@ where
     fn get_response(&mut self) -> Result<Answer, std::io::Error> {
         let prompt = self.prompt.clone();
         match self.prompt_user(&prompt) {
-            Ok(ref answer) if (self.default != None) && answer == "" => {
+            Ok(ref answer) if self.default.is_some() && answer.is_empty() => {
                 Ok(self.default.clone().unwrap())
             }
             Ok(answer) => Ok(Answer::RESPONSE(answer)),
@@ -396,7 +395,7 @@ where
                     return Some(valid_responses[key].clone());
                 }
                 if let Some(default) = self.default.clone() {
-                    if response == "" {
+                    if response.is_empty() {
                         return Some(default);
                     }
                 }
@@ -417,7 +416,7 @@ where
                     return Some(Answer::RESPONSE(acceptable_response.clone()));
                 }
                 if let Some(default) = self.default.clone() {
-                    if response == "" {
+                    if response.is_empty() {
                         return Some(default);
                     }
                 }
@@ -616,8 +615,7 @@ mod tests {
                     result = q.prompt_user($question).unwrap();
                 } // end borrow of output before using it
 
-                let output =
-                    String::from_utf8(displayed_output.into_inner()).expect("Not UTF-8");
+                let output = String::from_utf8(displayed_output.into_inner()).expect("Not UTF-8");
                 assert_eq!($question, output);
                 assert_eq!(response, result);
             };
